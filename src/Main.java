@@ -1,12 +1,13 @@
 public class Main {
     // Метод к заданию 1
     public static void printTheYear(int year) {
-        if (year >= 1582 && (year % 4 == 0 || year % 400 == 0)) {
+        if (year < 1584) {
+            System.out.println("Год должен быть больше 1584");
+        } else if ((year > 1584 && (year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
             System.out.println(year + " год является високосным");
-        } else if (year >= 1582 && year % 100 != 0) {
-            System.out.println(year + " год не является високосным");
         } else {
-            System.out.println("Недопустимое значение");
+            System.out.println(year + " год не является високосным");
+
         }
     }
 
@@ -51,6 +52,6 @@ public class Main {
         System.out.println();
         System.out.println("Задание 3");
         int deliveryDistance = 95;
-        printDistanceTime (deliveryDistance);
+        printDistanceTime(deliveryDistance);
     }
 }
